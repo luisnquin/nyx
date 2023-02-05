@@ -51,8 +51,7 @@ main() {
         nix-store --delete
         sudo rm -rf /tmp/*
         rm -rf ~/.npm/_npx
-        docker system prune
-        docker system prune --volumes
+        docker system prune --volumes -f
 
         after=$(df --output=size,used,pcent --human-readable / | tail -n +2)
 
