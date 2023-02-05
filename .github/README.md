@@ -1,5 +1,5 @@
 
-# Nyx computer manager
+# ♟ Nyx computer manager
 
 ```sh
 # A sh script focused in NixOS
@@ -17,3 +17,7 @@ Available commands:
 Global flags:
 -h, --help Print help information
 ```
+
+# License
+
+[UNLICENSE](https://unlicense.org/)
