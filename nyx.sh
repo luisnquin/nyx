@@ -34,7 +34,7 @@ main() {
         printf "\n\033[0;95mEnsuring symlinks [2/3]\033[0m\n"
         ensure_symlinks
 
-        printf "\n\033[0;92mBuilding and updating [3/3]\033[0m\n"
+        printf "\n\033[0;92mStarting update process... [3/3]\033[0m\n"
         sudo nixos-rebuild boot --upgrade
 
         printf "\n\033[1;34mSuccessfully updated! ❄️❄️❄️\033[0m\n"
