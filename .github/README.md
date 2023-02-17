@@ -8,7 +8,7 @@ $ nyx --help
 nyx [command] [flags]
 
 Available commands:
-  update     Updates the machine
+  update ⛄    Updates the machine
   inspect      Verifies if the configuration.nix file has been changed and not saved to a git repository
   style 💅     Applies alejandra style to all .nix files
   ls           List elements in dotfiles directory
