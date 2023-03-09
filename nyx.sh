@@ -71,9 +71,6 @@ main() {
             printf "\n%s generations has been removed\n" "$nb_of_removed_gens"
         fi
         ;;
-    3)
-        # TODO: Voir
-        ;;
     4)
         # Inspect
         stat "$dotfiles_dir/.git/" >/dev/null
@@ -137,7 +134,6 @@ while [ "$#" -gt 0 ]; do
     case "$1" in
     update) subcommand=1 shift 1 ;;
     clean) subcommand=2 shift 1 ;;
-    voir) subcommand=3 shift 1 ;;
     inspect) subcommand=4 shift 1 ;;
     style) subcommand=5 shift 1 ;;
     ls) subcommand=6 shift 1 ;;
