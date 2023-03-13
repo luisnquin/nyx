@@ -35,7 +35,8 @@ main() {
         ensure_symlinks
 
         printf "\n\033[0;92mStarting update process... [3/4]\033[0m\n"
-        sudo nixos-rebuild switch --upgrade --flake \#nyx -I nixos-config=/etc/nixos/system/configuration.nix
+        # sudo nixos-rebuild boot --upgrade --flake \#nyx -I nixos-config=/etc/nixos/system/configuration.nix
+        sudo nixos-rebuild boot --flake .\#nyx
 
         printf "\033[38;2;240;89;104mUpdating home profile... [4/4]\033[0m"
         (
