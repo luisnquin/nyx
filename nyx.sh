@@ -2,8 +2,8 @@
 
 # Variables definitions
 dotfiles_dir="$HOME/.dotfiles/"
-config_file="${dotfiles_dir}configuration.nix"
-hardware_file="${dotfiles_dir}hardware-configuration.nix"
+config_file="${dotfiles_dir}system/configuration.nix"
+hardware_file="${dotfiles_dir}system/hardware-configuration.nix"
 
 subcommand=0
 
@@ -35,7 +35,8 @@ main() {
         ensure_symlinks
 
         printf "\n\033[0;92mStarting update process... [3/3]\033[0m\n"
-        sudo nixos-rebuild boot --upgrade
+
+        sudo nixos-rebuild switch --upgrade --flake \#nyx -I nixos-config=/etc/nixos/system/configuration.nix
 
         printf "\n\033[1;34mSuccessfully updated! ❄️❄️❄️\033[0m\n"
         ;;
