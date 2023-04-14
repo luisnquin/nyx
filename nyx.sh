@@ -34,14 +34,19 @@ main() {
         printf "\n\033[0;95mEnsuring symlinks [2/4]\033[0m\n"
         ensure_symlinks
 
-        printf "\n\033[0;92mStarting update process... [3/4]\033[0m\n"
-        # sudo nixos-rebuild boot --upgrade --flake \#nyx -I nixos-config=/etc/nixos/system/configuration.nix
-        sudo nixos-rebuild boot --flake .\#nyx
+        printf "\n\033[0;92mStarting update process...\033[0m\n"
 
-        printf "\033[38;2;240;89;104mUpdating home profile... [4/4]\033[0m"
+        printf "\n\033[38;2;240;89;104mUpdating system [3/4]\033[0m\n"
+
         (
-            cd /etc/nixos
-            home-manager switch --flake .
+            cd /home/"$USER"/.dotfiles
+            sudo nixos-rebuild switch --upgrade --flake .#nyx
+        )
+
+        printf "\033[38;2;240;89;104mUpdating home profile [4/4]\033[0m\n"
+        (
+            cd /home/"$USER"/.dotfiles
+            home-manager switch --flake .#luisnquin
         )
 
         printf "\n\033[1;34mSuccessfully updated! ❄️❄️❄️\033[0m\n"
